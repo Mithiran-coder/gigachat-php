@@ -1,5 +1,5 @@
 # this code is written by mithiran with help of https://www.youtube.com/@TechWithTim
-
+# code changes in remote repo by balu
 print("Welcome to Mithiran's quiz")
 
 player = input("Do you want to play? y/n ")
