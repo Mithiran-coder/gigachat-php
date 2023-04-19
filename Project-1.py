@@ -1,3 +1,5 @@
+# this code is written by mithiran with help of https://www.youtube.com/@TechWithTim
+
 print("Welcome to Mithiran's quiz")
 
 player = input("Do you want to play? y/n ")

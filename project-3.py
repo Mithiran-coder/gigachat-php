@@ -1,3 +1,4 @@
+# this code is written by mithiran with help of https://www.youtube.com/@TechWithTim
 import random
 
 options =["rock", "paper", "scissors"]

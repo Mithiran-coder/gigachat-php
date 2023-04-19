@@ -1,3 +1,5 @@
+# this code is written by mithiran with help of https://www.youtube.com/@TechWithTim
+
 import random
 
 top_of_range = input("enter the range of number you would like: ")

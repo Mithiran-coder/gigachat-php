@@ -1,3 +1,5 @@
+# this code is written by mithiran with help of https://www.youtube.com/@TechWithTim
+
 name = input("Please enter your name: ")
 print(f"welcome to {name}'s adventure")
 
@@ -13,16 +15,16 @@ if answer == "right":
         else:
             print("Invalid option You lose!")
             quit()
-    elif answer == back:
+    elif answer == "back":
         print("You lose!")
     else:
         print("Invalid option You lose!")
         quit()
-elif answer == left:
+elif answer == "left":
     answer = input("You have reached a lake you can cross it by swimming or walking on the bridge (walk/swim). ")
     if answer == "walk":
         print("you fell down the bridge and died ")
-    elif answer == back:
+    elif answer == "swim":
         print("you got eaten by aligators")
     else:
         print("Invalid option You lose!")
