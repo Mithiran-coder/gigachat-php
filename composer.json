@@ -1,0 +1,53 @@
+{
+    "name": "tigusigalpa/gigachat-php",
+    "description": "🚀 GigaChat PHP SDK - полнофункциональная библиотека для интеграции с Sber GigaChat API. Простое подключение GigaChat к PHP-приложениям с поддержкой Laravel. Генерация текста, чат-боты, AI-ассистенты. Полная документация, примеры кода, OAuth авторизация.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Igor Sazonov",
+            "email": "sovletig@gmail.com",
+            "homepage": "https://github.com/tigusigalpa"
+        }
+    ],
+    "require": {
+        "php": "^8.2",
+        "guzzlehttp/guzzle": "^7.8.2",
+        "illuminate/support": "^8|^9|^10|^11|^12"
+    },
+    "autoload": {
+        "psr-4": {
+            "Tigusigalpa\\GigaChat\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Tigusigalpa\\GigaChat\\Laravel\\GigaChatServiceProvider"
+            ],
+            "aliases": {
+                "GigaChat": "Tigusigalpa\\GigaChat\\Laravel\\GigaChat"
+            }
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "keywords": [
+        "gigachat",
+        "sber",
+        "ai",
+        "chatbot",
+        "laravel",
+        "php",
+        "sdk",
+        "api",
+        "artificial-intelligence",
+        "machine-learning"
+    ],
+    "homepage": "https://github.com/tigusigalpa/gigachat-php",
+    "support": {
+        "issues": "https://github.com/tigusigalpa/gigachat-php/issues",
+        "source": "https://github.com/tigusigalpa/gigachat-php",
+        "docs": "https://developers.sber.ru/docs/ru/gigachat/api/overview"
+    }
+}
