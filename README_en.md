@@ -2,6 +2,8 @@
 
 [Русская версия](README.md)
 
+![GigaChat PHP SDK](https://github.com/user-attachments/assets/bcf42e4c-d410-47b3-844e-c298f68b0c52)
+
 A comprehensive PHP SDK for working with Sber GigaChat API with Laravel integration. The package provides a convenient
 interface for integrating with Sber GigaChat AI models, including support for streaming and regular requests.
 
@@ -50,7 +52,8 @@ To work with GigaChat API, you need to obtain authorization credentials:
 2. Create a project and get **Client ID** and **Client Secret**
 3. Generate **Authorization Key** (Base64 of "Client ID:Client Secret")
 
-> 💡 **Detailed instructions**: [Creating a project and getting keys](https://developers.sber.ru/docs/ru/gigachat/quickstart/ind-create-project)
+> 💡 **Detailed instructions
+**: [Creating a project and getting keys](https://developers.sber.ru/docs/ru/gigachat/quickstart/ind-create-project)
 
 ### 2. Environment setup
 
@@ -232,22 +235,23 @@ class Article extends Model
 
 ## 🤖 Available models
 
-GigaChat supports several models for different tasks. The current list of models is available in the [official documentation](https://developers.sber.ru/docs/ru/gigachat/models).
+GigaChat supports several models for different tasks. The current list of models is available in
+the [official documentation](https://developers.sber.ru/docs/ru/gigachat/models).
 
 ### Text generation models
 
-| Model               | Description                               | Usage                           |
-|---------------------|-------------------------------------------|---------------------------------|
-| **GigaChat-2**      | Base second-generation model              | General tasks, dialogues        |
-| **GigaChat-2-Pro**  | Advanced model with enhanced capabilities | Complex tasks, creative writing |
-| **GigaChat-2-Max**  | Maximum model for the most complex tasks  | Professional tasks, analysis    |
+| Model              | Description                               | Usage                           |
+|--------------------|-------------------------------------------|---------------------------------|
+| **GigaChat-2**     | Base second-generation model              | General tasks, dialogues        |
+| **GigaChat-2-Pro** | Advanced model with enhanced capabilities | Complex tasks, creative writing |
+| **GigaChat-2-Max** | Maximum model for the most complex tasks  | Professional tasks, analysis    |
 
 ### Embedding models
 
-| Model               | Description                               | Usage                           |
-|---------------------|-------------------------------------------|---------------------------------|
-| **Embeddings**      | Base model for vector representation     | Semantic search, clustering     |
-| **EmbeddingsGigaR** | Enhanced model for creating embeddings   | Precise search, semantic analysis |
+| Model               | Description                            | Usage                             |
+|---------------------|----------------------------------------|-----------------------------------|
+| **Embeddings**      | Base model for vector representation   | Semantic search, clustering       |
+| **EmbeddingsGigaR** | Enhanced model for creating embeddings | Precise search, semantic analysis |
 
 ### Using model constants
 
@@ -489,13 +493,15 @@ A: Set `GIGACHAT_CERT_PATH` to the certificate file path or `false` to disable v
 A: Yes, the SDK is ready for production use. Make sure SSL and rate limiting are properly configured.
 
 **Q: Where can I find pricing information?**
-A: Current pricing information is available in the [official documentation](https://developers.sber.ru/docs/ru/gigachat/api/tariffs).
+A: Current pricing information is available in
+the [official documentation](https://developers.sber.ru/docs/ru/gigachat/api/tariffs).
 
 ### Problem solving
 
 **Problem**: SSL/TLS errors
 
 When making requests to GigaChat API, you may encounter the error:
+
 ```
 OAuth token request failed: cURL error 60: SSL certificate problem: self-signed certificate in certificate chain
 ```
@@ -511,6 +517,7 @@ GIGACHAT_CERT_PATH=/path/to/certificate.pem
 ```
 
 After adding `GIGACHAT_CERT_PATH=false` to your `.env` file, clear the configuration cache:
+
 ```bash
 php artisan config:clear
 php artisan config:cache
@@ -599,7 +606,9 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 ## 🔗 Useful links
 
 ### Official GigaChat Documentation
-- 📝 **Registration and getting Client ID**: [Create Project](https://developers.sber.ru/docs/ru/gigachat/quickstart/ind-create-project)
+
+- 📝 **Registration and getting Client ID
+  **: [Create Project](https://developers.sber.ru/docs/ru/gigachat/quickstart/ind-create-project)
 - 🚀 **Getting started with API**: [Quick Start](https://developers.sber.ru/docs/ru/gigachat/quickstart/ind-using-api)
 - 📖 **API Documentation**: [API Reference](https://developers.sber.ru/docs/ru/gigachat/api/reference/rest/gigachat-api)
 - 🤖 **Current models list**: [Models Description](https://developers.sber.ru/docs/ru/gigachat/models)
