@@ -181,4 +181,115 @@ class GigaChatClient implements GigaChatClientInterface
             }
         }
     }
+
+    /**
+     * Generate image using GigaChat
+     * 
+     * @param string $prompt Image generation prompt (should contain "нарисуй" or similar)
+     * @param array $options Additional options (system message, model, etc.)
+     * @return array Response with image ID in content
+     * @throws ValidationException
+     * @throws GigaChatException
+     */
+    public function generateImage(string $prompt, array $options = []): array
+    {
+        if (trim($prompt) === '') {
+            throw new ValidationException('Image prompt cannot be empty');
+        }
+
+        $systemMessage = $options['system_message'] ?? null;
+        $messages = [];
+        
+        if ($systemMessage) {
+            $messages[] = [
+                'role' => 'system',
+                'content' => $systemMessage
+            ];
+        }
+        
+        $messages[] = [
+            'role' => 'user',
+            'content' => $prompt
+        ];
+
+        $chatOptions = array_merge($options, [
+            'function_call' => 'auto'
+        ]);
+        
+        unset($chatOptions['system_message']);
+
+        return $this->chat($messages, $chatOptions);
+    }
+
+    /**
+     * Download image by file ID
+     * 
+     * @param string $fileId Image file ID from generateImage response
+     * @return string Base64 encoded image content
+     * @throws ValidationException
+     * @throws GigaChatException
+     */
+    public function downloadImage(string $fileId): string
+    {
+        if (trim($fileId) === '') {
+            throw new ValidationException('File ID cannot be empty');
+        }
+
+        $token = $this->tokenManager->getAccessToken();
+        
+        $resp = $this->http->get("/api/v1/files/{$fileId}/content", [
+            'headers' => [
+                'Accept' => 'application/jpg',
+                'Authorization' => 'Bearer ' . $token,
+            ],
+        ]);
+
+        return base64_encode((string) $resp->getBody());
+    }
+
+    /**
+     * Generate and download image in one call
+     * 
+     * @param string $prompt Image generation prompt
+     * @param array $options Additional options
+     * @return array ['content' => base64_content, 'file_id' => file_id]
+     * @throws ValidationException
+     * @throws GigaChatException
+     */
+    public function createImage(string $prompt, array $options = []): array
+    {
+        $response = $this->generateImage($prompt, $options);
+        
+        // Extract file ID from response content
+        $content = $response['choices'][0]['message']['content'] ?? '';
+        $fileId = $this->extractImageId($content);
+        
+        if (!$fileId) {
+            throw new GigaChatException('Could not extract image ID from response');
+        }
+
+        $imageContent = $this->downloadImage($fileId);
+
+        return [
+            'content' => $imageContent,
+            'file_id' => $fileId,
+            'response' => $response
+        ];
+    }
+
+    /**
+     * Extract image ID from HTML content
+     * 
+     * @param string $content HTML content with img tag
+     * @return string|null Image file ID
+     */
+    private function extractImageId(string $content): ?string
+    {
+        // Parse HTML to extract src attribute from img tag
+        if (preg_match('/<img[^>]+src=["\']([^"\']+)["\'][^>]*>/i', $content, $matches)) {
+            return $matches[1];
+        }
+        
+        return null;
+    }
 }

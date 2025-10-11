@@ -15,10 +15,24 @@
         "guzzlehttp/guzzle": "^7.8.2",
         "illuminate/support": "^8|^9|^10|^11|^12"
     },
+    "require-dev": {
+        "phpunit/phpunit": "^10.0|^11.0",
+        "mockery/mockery": "^1.6",
+        "orchestra/testbench": "^8.0|^9.0"
+    },
     "autoload": {
         "psr-4": {
             "Tigusigalpa\\GigaChat\\": "src/"
         }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tigusigalpa\\GigaChat\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "phpunit",
+        "test-coverage": "phpunit --coverage-html coverage"
     },
     "extra": {
         "laravel": {
